@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block page %}
+<h1>Eventos cadastrados</h1>
+    <ul class="list-group">
+        {% for event in events %}
+        <li class="list-group-item"> 
+            <a href="{{ url_for('webui.event', event_id=event['_id']) }}">
+                {{ event['name'] }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
