@@ -3,9 +3,9 @@ venv
 .venv
 .talkshow
 .secrets.toml
+
 *.egg-info
 database
 .pytest_cache
 __pycache__
-.secrets.toml
 .coverage
