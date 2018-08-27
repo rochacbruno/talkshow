@@ -1,6 +1,9 @@
+venv
+.venv
 .talkshow
 *.egg-info
 database
 .pytest_cache
 __pycache__
 */__pycache__
+.secrets.toml

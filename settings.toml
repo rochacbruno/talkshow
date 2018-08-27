@@ -1,0 +1,9 @@
+[default]
+DEBUG = true
+SERVER = 'localhost'
+PORT = 5000
+FLASK_ADMIN_SWATCH = 'cerulean'
+SECRET_KEY = ''
+
+[development]
+DEBUG = true

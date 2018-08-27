@@ -13,7 +13,8 @@ requirements = [
     'flask-pytest',
     'flask-bootstrap',
     'python-dotenv',
-    'flasgger'
+    'flasgger',
+    'dynaconf'
 ]
 
 
