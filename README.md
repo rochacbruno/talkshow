@@ -59,3 +59,5 @@ webui.event                GET, POST  /<event_id>/
 webui.index                GET        /
 
 ```
+
+Uma versão `evoluida` deste projeto está sendo desenvolvido na branch `extended` https://github.com/rochacbruno/talkshow/tree/extended
