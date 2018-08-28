@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.6"
+install:
+  - "python setup.py install"
+  - "pip install flake8"
+script:
+  - "flake8 talkshow/"
+  - "flake8 tests/"
+  - "py.test -v tests/"
