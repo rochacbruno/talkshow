@@ -1,5 +1,7 @@
 # talkshow
 
+[![Build Status](https://travis-ci.com/rochacbruno/talkshow.svg?branch=extended)](https://travis-ci.com/rochacbruno/talkshow)
+
 A Call 4 Papers System - A simple base app as example of Flask Architecture
 
 Este é o material do tutorial da Flask Conf 2018 - O evento ocorreu no dia 24/08/2018 - com Patrocinio da SciELO
