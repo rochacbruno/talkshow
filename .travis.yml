@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.6"
+install:
+  - "pip install --upgrade pip"
+  - "pip install .[dev]"
+script:
+  - "flake8 talkshow/"
+  - "flake8 tests/"
+  - "py.test --cov=talkshow -v tests/"
+after_success: codecov
