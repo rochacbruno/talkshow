@@ -3,9 +3,9 @@ python:
   - "3.6"
 install:
   - "pip install --upgrade pip"
-  - "pip install .[dev]"
+  - "pip install -e .[dev]"
 script:
   - "flake8 talkshow/"
   - "flake8 tests/"
-  - "py.test --cov=talkshow -v tests/"
+  - "py.test  -v --cov-config .coveragerc --cov=talkshow -l --tb=short --maxfail=1 tests/"
 after_success: codecov

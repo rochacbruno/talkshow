@@ -1,19 +1,20 @@
 from flask import Flask
-from talkshow.ext import db
-from talkshow.ext import cli
-from talkshow.ext import bootstrap
+
+from talkshow.blueprints import restapi
+from talkshow.blueprints import webui
 from talkshow.ext import admin
 from talkshow.ext import apidocs
+from talkshow.ext import bootstrap
+from talkshow.ext import cli
+from talkshow.ext import configuration
+from talkshow.ext import db
 from talkshow.ext import login
-from talkshow.blueprints import webui
-from talkshow.blueprints import restapi
 
 
 def create_app():
     """Creates a new Flask app"""
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'secret'
-    app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
+    configuration.configure(app)
     # extensions
     db.configure(app)  # <-- `app` passado para o db factory
     cli.configure(app)  # <-- `app` passado para o cli factory

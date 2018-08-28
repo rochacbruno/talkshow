@@ -1,5 +1,5 @@
 # coding: utf-8
-from setuptools import setup
+from setuptools import setup, find_packages
 
 requirements = [
     'flask',
@@ -11,7 +11,8 @@ requirements = [
     'flask-restful',
     'flask-bootstrap',
     'python-dotenv',
-    'flasgger'
+    'flasgger',
+    'dynaconf'
 ]
 
 requirements_extra = {
@@ -28,7 +29,7 @@ setup(
     name='talkshow',
     version='0.1.0',
     description="Call for papers system",
-    packages=['talkshow'],
+    packages=find_packages(include=['talkshow', 'talkshow.*']),
     include_package_data=True,
     install_requires=requirements,
     extras_require=requirements_extra
