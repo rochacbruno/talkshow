@@ -1,3 +1,4 @@
+*env
 venv
 .venv
 .talkshow
@@ -6,3 +7,4 @@ database
 .pytest_cache
 __pycache__
 .secrets.toml
+.coverage
