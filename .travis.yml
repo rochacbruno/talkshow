@@ -4,6 +4,7 @@ python:
 install:
   - "pip install --upgrade pip"
   - "pip install -e .[dev]"
+  - "flask adduser -u admin -p 1234"
 script:
   - "flake8 talkshow/"
   - "flake8 tests/"
