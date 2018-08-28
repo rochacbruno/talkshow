@@ -1,5 +1,4 @@
 # coding: utf-8
-
 from setuptools import setup
 
 requirements = [
@@ -10,18 +9,27 @@ requirements = [
     'flask-admin',
     'flask-wtf',
     'flask-restful',
-    'flask-pytest',
     'flask-bootstrap',
     'python-dotenv',
     'flasgger'
 ]
 
+requirements_extra = {
+    'dev': [
+        'flake8',
+        'codecov',
+        'pytest',
+        'pytest-cov',
+        'pytest-flask',
+    ]
+}
 
 setup(
     name='talkshow',
-    version='0.0.1',
+    version='0.1.0',
     description="Call for papers system",
     packages=['talkshow'],
     include_package_data=True,
-    install_requires=requirements
+    install_requires=requirements,
+    extras_require=requirements_extra
 )
