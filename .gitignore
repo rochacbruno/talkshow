@@ -3,7 +3,6 @@ venv
 .venv
 .talkshow
 .secrets.toml
-
 *.egg-info
 database
 .pytest_cache
