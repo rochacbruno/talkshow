@@ -1,7 +1,7 @@
 from flask import Flask
 
-from talkshow.blueprints import restapi
-from talkshow.blueprints import webui
+from talkshow.blueprints.restapi import restapi as bp_restapi
+from talkshow.blueprints.webui import webui as bp_webui
 from talkshow.ext import admin
 from talkshow.ext import apidocs
 from talkshow.ext import bootstrap
@@ -23,6 +23,6 @@ def create_app():
     apidocs.configure(app)  # <-- `app` passado para o apidocs factory
     login.configure(app)  # <-- `app` passado para o login factory
     # blueprints
-    webui.configure(app)  # <-- registro do webui
-    restapi.configure(app)  # <-- registro do restapi
+    bp_webui.configure(app)  # <-- registro do webui
+    bp_restapi.configure(app)  # <-- registro do restapi
     return app

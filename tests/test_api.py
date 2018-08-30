@@ -1,5 +1,3 @@
-
-
 def test_can_create_event(client, auth):
     """Asserts an event can be created via API"""
     event_data = {"name": "Puggies Convention", "date": "2018-09-09"}

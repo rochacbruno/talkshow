@@ -1,11 +1,6 @@
-from flask import Blueprint
 from flask import current_app as app
-from flask_restful import Api, Resource, reqparse
+from flask_restful import reqparse, Resource
 from flask_simplelogin import login_required
-
-bp = Blueprint('restapi', __name__, url_prefix='/api/v1')
-api = Api(bp)
-
 
 event_post_parser = reqparse.RequestParser()
 event_post_parser.add_argument('name', required=True)
@@ -70,11 +65,3 @@ class EventItem(Resource):
             'approved': False
         })
         return {'proposal created': new.inserted_id}, 201
-
-
-def configure(app):
-    """Initialize API and register blueprint"""
-    api.add_resource(Event, '/event/')
-    api.add_resource(EventItem, '/event/<event_id>')
-
-    app.register_blueprint(bp)

@@ -1,5 +1,7 @@
-import pytest
 from base64 import b64encode
+
+import pytest
+
 from talkshow.app import create_app
 
 
