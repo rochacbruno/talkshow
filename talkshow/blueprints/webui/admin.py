@@ -1,8 +1,8 @@
 from flask import current_app as app, flash
 from flask_admin.actions import action
-from flask_admin.contrib.pymongo import ModelView
+from talkshow.ext.admin import LoginRequiredModelView
 
-from talkshow.blueprints.webui.forms import ProposalAdminForm
+from .forms import ProposalAdminForm
 
 
 def format_event(self, request, obj, fieldname, *args, **kwargs):
@@ -10,12 +10,12 @@ def format_event(self, request, obj, fieldname, *args, **kwargs):
     return app.db['events'].find_one({'_id': obj['event_id']})['name']
 
 
-class AdminProposal(ModelView):
+class AdminProposal(LoginRequiredModelView):
     """The proposal admin item"""
     can_create = False
-    column_list = ('event_id', 'name', 'title', 'approved')
+    column_list = ('event', 'name', 'title', 'approved')
     form = ProposalAdminForm
-    column_formatters = {'event_id': format_event}
+    column_formatters = {'event': format_event}
 
     @action(
         'toggle_approval',
