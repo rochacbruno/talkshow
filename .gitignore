@@ -7,5 +7,6 @@ venv
 database
 .pytest_cache
 __pycache__
-.secrets.toml
 .coverage
+build
+dist

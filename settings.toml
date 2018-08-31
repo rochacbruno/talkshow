@@ -1,9 +1,22 @@
 [default]
-DEBUG = true
-SERVER = 'localhost'
-PORT = 5000
+DEBUG = false
+FLASK_ADMIN_NAME = "TalkShow Admin"
+FLASK_ADMIN_TEMPLATE_MODE = "bootstrap2"
 FLASK_ADMIN_SWATCH = 'cerulean'
 SECRET_KEY = 'empty'
+EXTENSIONS = [
+    "talkshow.ext.db", 
+    "talkshow.ext.cli", 
+    "talkshow.ext.bootstrap",
+    "talkshow.ext.admin",
+    "talkshow.ext.apidocs",
+    "talkshow.ext.login"
+]
+BLUEPRINTS = [
+    "talkshow.blueprints.webui", 
+    "talkshow.blueprints.restapi"
+]
 
 [development]
 DEBUG = true
+TEMPLATES_AUTO_RELOAD = true

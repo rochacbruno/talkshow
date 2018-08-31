@@ -3,7 +3,7 @@ from talkshow.ext.login import create_user
 
 
 def configure(app):
-    """Attach new commands in to app"""
+    """Attach new commands to app"""
 
     @app.cli.command()
     @click.option('--name', '-n', required=True)

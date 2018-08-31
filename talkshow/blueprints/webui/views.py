@@ -1,19 +1,14 @@
 import datetime
-
 from flask import current_app as app, render_template, abort, request
-
-from talkshow.blueprints.webui.forms import ProposalForm
-from talkshow.blueprints.webui.webui import bp_webui
+from .forms import ProposalForm
 
 
-@bp_webui.route('/')
 def index():
     """View to list all registered events"""
     events = app.db['events'].find()
     return render_template('index.html', events=events)
 
 
-@bp_webui.route('/<event_id>/', methods=['GET', 'POST'])
 def event(event_id):
     """A form to submit a talk to the selected event"""
     event = app.db['events'].find_one({'_id': event_id})
