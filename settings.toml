@@ -4,6 +4,11 @@ SERVER = 'localhost'
 PORT = 5000
 FLASK_ADMIN_SWATCH = 'cerulean'
 SECRET_KEY = 'empty'
+EXTENSIONS=["talkshow.ext.db", "talkshow.ext.cli", "talkshow.ext.bootstrap",
+            "talkshow.ext.admin",  "talkshow.ext.apidocs", "talkshow.ext.login"]
+BLUEPRINTS = ["talkshow.blueprints.webui.webui", "talkshow.blueprints.restapi.restapi"]
+
+
 
 [development]
 DEBUG = true
