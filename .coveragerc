@@ -1,2 +1,3 @@
 [run]
 source = talkshow
+omit = */.talkshow/*, */.venv/*
