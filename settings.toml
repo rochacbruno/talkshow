@@ -7,16 +7,22 @@ SECRET_KEY = 'empty'
 EXTENSIONS = [
     "talkshow.ext.db", 
     "talkshow.ext.cli", 
+    "talkshow.ext.debug",
     "talkshow.ext.bootstrap",
     "talkshow.ext.admin",
     "talkshow.ext.apidocs",
-    "talkshow.ext.login"
+    "talkshow.ext.login",
 ]
 BLUEPRINTS = [
     "talkshow.blueprints.webui", 
     "talkshow.blueprints.restapi"
 ]
+DEBUG_TOOLBAR_ENABLED = false
 
 [development]
 DEBUG = true
+DEBUG_TOOLBAR_ENABLED = true
+DEBUG_TB_INTERCEPT_REDIRECTS = false
+DEBUG_TB_PROFILER_ENABLED = true
+DEBUG_TB_TEMPLATE_EDITOR_ENABLED = true
 TEMPLATES_AUTO_RELOAD = true

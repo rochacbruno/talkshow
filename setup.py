@@ -22,6 +22,7 @@ requirements_extra = {
         'pytest',
         'pytest-cov',
         'pytest-flask',
+        'flask-debugtoolbar',
     ]
 }
 
