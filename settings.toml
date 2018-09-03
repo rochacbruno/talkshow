@@ -7,16 +7,33 @@ SECRET_KEY = 'empty'
 EXTENSIONS = [
     "talkshow.ext.db", 
     "talkshow.ext.cli", 
+    "talkshow.ext.debug",
     "talkshow.ext.bootstrap",
     "talkshow.ext.admin",
     "talkshow.ext.apidocs",
-    "talkshow.ext.login"
+    "talkshow.ext.login",
 ]
 BLUEPRINTS = [
     "talkshow.blueprints.webui", 
     "talkshow.blueprints.restapi"
 ]
+DEBUG_TOOLBAR_ENABLED = false
 
 [development]
-DEBUG = true
 TEMPLATES_AUTO_RELOAD = true
+DEBUG = true
+DEBUG_TOOLBAR_ENABLED = true
+DEBUG_TB_INTERCEPT_REDIRECTS = false
+DEBUG_TB_PROFILER_ENABLED = true
+DEBUG_TB_TEMPLATE_EDITOR_ENABLED = true
+DEBUG_TB_PANELS = [
+  "flask_debugtoolbar.panels.versions.VersionDebugPanel",
+  "flask_debugtoolbar.panels.timer.TimerDebugPanel",
+  "flask_debugtoolbar.panels.headers.HeaderDebugPanel",
+  "flask_debugtoolbar.panels.request_vars.RequestVarsDebugPanel",
+  "flask_debugtoolbar.panels.template.TemplateDebugPanel",
+  "flask_debugtoolbar.panels.route_list.RouteListDebugPanel",
+  "flask_debugtoolbar.panels.logger.LoggingPanel",
+  "flask_debugtoolbar.panels.profiler.ProfilerDebugPanel",
+  "flask_debugtoolbar.panels.config_vars.ConfigVarsDebugPanel"
+]
