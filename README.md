@@ -4,6 +4,8 @@ A Call 4 Papers System - A simple base app as example of Flask Architecture
 
 Este é o material do tutorial da Flask Conf 2018 - O evento ocorreu no dia 24/08/2018 - com Patrocinio da SciELO
 
+> IMPORTANTE: Pull Requests e melhorias apenas na branch `extended`  https://github.com/rochacbruno/talkshow/tree/extended
+
 ## Apostila
 
 A Apostila em PDF contém a explicação detalhada dos arquivos deste repositório, é recomendado acompanhar a apostila enquanto desenvolve o projeto e utilizar este repositório apenas como referencia para copy/paste.
