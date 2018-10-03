@@ -3,6 +3,7 @@ python:
   - "3.6"
 install:
   - "pip install --upgrade pip"
+  - "pip install -e ."
   - "pip install -e .[dev]"
   - "flask adduser -u admin -p 1234"
 script:
