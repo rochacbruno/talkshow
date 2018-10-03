@@ -22,6 +22,7 @@ cd talkshow
 python3.6 -m venv venv
 source venv/bin/activate
 pip install -e .
+pip install -e .[dev]
 
 #comandos
 flask adduser -u admin -p 1234
@@ -57,7 +58,7 @@ restapi.eventitem          GET, POST  /api/v1/event/<event_id>
 simplelogin.login          GET, POST  /login/
 simplelogin.logout         GET        /logout/
 static                     GET        /static/<path:filename>
-webui.event                GET, POST  /<event_id>/
+webui.event                GET, POST  /<slug>/
 webui.index                GET        /
 
 ```

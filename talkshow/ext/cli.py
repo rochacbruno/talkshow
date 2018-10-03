@@ -1,5 +1,6 @@
 import click
 from talkshow.ext.login import create_user
+from slugify import slugify
 
 
 def configure(app):
@@ -10,8 +11,16 @@ def configure(app):
     @click.option('--date', '-d', required=True)
     def addevent(name, date):
         """Creates a new event entry"""
-        event = app.db['events'].insert_one({'name': name, 'date': date})
-        click.echo(f"{event.inserted_id} cadastrado com sucesso!")
+        slug = slugify(name, to_lower=True)
+        event = app.db['events'].find_one({'slug': slug})
+        if event:
+            click.echo(f"{event.inserted_id} evento já existe com esse nome!")
+        else:
+            event = app.db['events'].insert_one({
+                'name': name,
+                'slug': slug,
+                'date': date})
+            click.echo(f"{event.inserted_id} cadastrado com sucesso!")
 
     @app.cli.command()
     @click.option('--username', '-u', required=True)

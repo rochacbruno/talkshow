@@ -4,7 +4,7 @@
     <ul class="list-group">
         {% for event in events %}
         <li class="list-group-item"> 
-            <a href="{{ url_for('webui.event', event_id=event['_id']) }}">
+            <a href="{{ url_for('webui.event', slug=event['slug']) }}">
                 {{ event['name'] }}
             </a>
         </li>

@@ -12,7 +12,8 @@ requirements = [
     'flask-bootstrap',
     'python-dotenv',
     'flasgger',
-    'dynaconf'
+    'dynaconf',
+    "awesome-slugify"
 ]
 
 requirements_extra = {
