@@ -12,7 +12,7 @@ def configure(app):
     # Register URL rules using declarative instead of decorator
     bp_webui.add_url_rule('/', view_func=index)
     bp_webui.add_url_rule(
-        '/<event_id>/', methods=['GET', 'POST'], view_func=event
+        '/<slug>/', methods=['GET', 'POST'], view_func=event
     )
 
     # register blueprint

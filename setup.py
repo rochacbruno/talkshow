@@ -12,16 +12,17 @@ requirements = [
     'flask-bootstrap',
     'python-dotenv',
     'flasgger',
-    'dynaconf'
+    'dynaconf',
+    "awesome-slugify"
 ]
 
 requirements_extra = {
     'dev': [
         'flake8',
         'codecov',
-        'pytest',
-        'pytest-cov',
-        'pytest-flask',
+        'pytest>=3.8.2',
+        'pytest-cov>=2.5.1',
+        'pytest-flask>=0.13.0',
         'flask-debugtoolbar',
     ]
 }
