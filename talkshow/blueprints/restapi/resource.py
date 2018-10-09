@@ -1,8 +1,11 @@
+import click
 from datetime import datetime
+from flask import jsonify
 from flask import current_app as app
 from flask_restful import reqparse, Resource
 from flask_simplelogin import login_required
-from slugify import slugify
+
+from talkshow.utils import slugify
 
 event_post_parser = reqparse.RequestParser()
 event_post_parser.add_argument('name', required=True)
@@ -11,7 +14,7 @@ event_post_parser.add_argument('date', required=True)
 
 class Event(Resource):
     def get(self):
-        return {'events': list(app.db['events'].find())}
+        return jsonify({'events': list(app.db['events'].find())})
 
     @login_required(basic=True)
     def post(self):
@@ -38,15 +41,12 @@ class Event(Resource):
                   description: The id of the created event
         """
         event = event_post_parser.parse_args()
-        slug = slugify(event.name, to_lower=True)
-        event_db = app.db['events'].find_one({'slug': slug})
-        if event_db:
-            return {'event_duplicate': event_db['_id']}, 409
 
         new = app.db['events'].insert({
           'name': event.name,
-          'slug': slug,
-          'date': datetime.strptime(event.date, '%Y-%m-%d')})
+          'date': datetime.strptime(event.date, '%Y-%m-%d'),
+          'slug': slugify(event.name)})
+        click.echo(f"{new} AAA")
         return {'event_created': new.inserted_id}, 201
 
 
