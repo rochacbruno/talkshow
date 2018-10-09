@@ -1,4 +1,5 @@
 import click
+from datetime import datetime
 from talkshow.ext.login import create_user
 from slugify import slugify
 
@@ -19,7 +20,7 @@ def configure(app):
             event = app.db['events'].insert_one({
                 'name': name,
                 'slug': slug,
-                'date': date})
+                'date': datetime.strptime(date, '%Y-%m-%d')})
             click.echo(f"{event.inserted_id} cadastrado com sucesso!")
 
     @app.cli.command()

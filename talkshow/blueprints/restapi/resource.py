@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import current_app as app
 from flask_restful import reqparse, Resource
 from flask_simplelogin import login_required
@@ -45,7 +46,7 @@ class Event(Resource):
         new = app.db['events'].insert({
           'name': event.name,
           'slug': slug,
-          'date': event.date})
+          'date': datetime.strptime(event.date, '%Y-%m-%d')})
         return {'event_created': new.inserted_id}, 201
 
 

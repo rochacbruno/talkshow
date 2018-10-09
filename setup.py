@@ -13,7 +13,8 @@ requirements = [
     'python-dotenv',
     'flasgger',
     'dynaconf',
-    "awesome-slugify"
+    "awesome-slugify",
+    "tinydb-serialization"
 ]
 
 requirements_extra = {
