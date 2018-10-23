@@ -20,6 +20,7 @@ requirements_extra = {
     'dev': [
         'flake8',
         'codecov',
+        'coverage',
         'pytest>=3.8.2',
         'pytest-cov>=2.5.1',
         'pytest-flask>=0.13.0',
