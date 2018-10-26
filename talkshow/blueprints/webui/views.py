@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from flask import current_app as app, render_template, abort, request
 from .forms import ProposalForm
 
@@ -21,7 +21,8 @@ def event(slug):
         # Se estamos no meio de um submit válido preparamos os dados
         proposal = form.data.copy()
         proposal['event_id'] = event['_id']
-        proposal['date'] = datetime.datetime.today().date().isoformat()
+        # proposal['date'] = datetime.datetime.today().date().isoformat()
+        proposal['date'] = datetime.today()
         proposal['approved'] = False
         # e gravamos no banco de dados
         app.db['proposal'].insert_one(proposal)

@@ -1,5 +1,6 @@
 import wtforms as wtf
 from flask_wtf import FlaskForm
+from flask_admin.form.fields import DateTimeField as FlaskAdminDateTimeField
 
 
 class ProposalForm(FlaskForm):
@@ -21,6 +22,7 @@ class ProposalForm(FlaskForm):
 
 class ProposalAdminForm(ProposalForm):
     """Extends Proposal form to use in admin interface"""
+    date = FlaskAdminDateTimeField()  # this shows date picker widget
     event_id = wtf.StringField()
     approved = wtf.BooleanField()
     submit = None
