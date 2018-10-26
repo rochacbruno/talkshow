@@ -1,12 +1,10 @@
+dist: xenial
 language: python
 python:
   - "3.6"
+  - "3.7"
 install:
-  - "pip install --upgrade pip"
-  - "pip install -e .[dev] --upgrade --no-cache"
-  - "flask adduser -u admin -p 1234"
+  - "make install"
 script:
-  - "flake8 talkshow/"
-  - "flake8 tests/"
-  - "py.test  -v --cov-config .coveragerc --cov=talkshow -l --tb=short --maxfail=1 tests/"
+  - "make test"
 after_success: codecov

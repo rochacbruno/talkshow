@@ -13,7 +13,7 @@ def format_event(self, request, obj, fieldname, *args, **kwargs):
 class AdminProposal(LoginRequiredModelView):
     """The proposal admin item"""
     can_create = False
-    column_list = ('event', 'name', 'title', 'approved')
+    column_list = ('event', 'name', 'title', 'date', 'approved')
     form = ProposalAdminForm
     column_formatters = {'event': format_event}
 
