@@ -26,8 +26,7 @@ cd talkshow
 git checkout extended
 python3.6 -m venv venv
 source venv/bin/activate
-pip install -e .
-pip install -e .[dev]
+pip install -e '.[dev]'
 
 #comandos
 flask adduser -u admin -p 1234
