@@ -12,6 +12,10 @@ A Apostila em PDF contém a explicação detalhada dos arquivos deste repositór
 
 Apostila:  https://github.com/rochacbruno/talkshow/blob/master/TutorialFlaskConf2018_BrunoRocha.pdf 
 
+Código para acompanhar a apostila está na branch `master` https://github.com/rochacbruno/talkshow/tree/master
+
+> IMPORTANTE: Alterações e evoluções nesta aplicações serão feitas apenas nesta branch `extended` a branch `master` se manterá em sincronia com a apostila.
+
 ## TL:DR;
 
 Não quer acompanhar a apostila e apenas ver o código em execução?
@@ -71,4 +75,4 @@ webui.index                GET        /
 
 ```
 
-Uma versão `evoluida` deste projeto está sendo desenvolvido na branch `extended` https://github.com/rochacbruno/talkshow/tree/extended
+Contribuições são bem vindas na branch `extended`
