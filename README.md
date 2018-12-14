@@ -19,6 +19,7 @@ Não quer acompanhar a apostila e apenas ver o código em execução?
 ```
 git clone https://github.com/rochacbruno/talkshow.git
 cd talkshow
+git checkout extended
 python3.6 -m venv venv
 source venv/bin/activate
 pip install -e .
@@ -30,6 +31,11 @@ flask addevent -n "Flask Conf" -d "2018-08-25"
 flask routes
 flask run
 ```
+
+Acesse: http://localhost:5000 para ver os eventos cadastrados e submeter propostas
+
+Admin em http://localhost:5000/admin user:admin pass:1234
+
 
 URLS e APIS:
 
