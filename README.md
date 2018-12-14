@@ -36,6 +36,8 @@ Acesse: http://localhost:5000 para ver os eventos cadastrados e submeter propost
 
 Admin em http://localhost:5000/admin user:admin pass:1234
 
+API em http://localhost:5000/apidocs/
+
 
 URLS e APIS:
 
