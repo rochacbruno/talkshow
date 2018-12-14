@@ -1,6 +1,8 @@
 # talkshow
 
 [![Build Status](https://travis-ci.com/rochacbruno/talkshow.svg?branch=extended)](https://travis-ci.com/rochacbruno/talkshow)
+[![codecov](https://codecov.io/gh/rochacbruno/talkshow/branch/extended/graph/badge.svg)](https://codecov.io/gh/rochacbruno/talkshow)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/rochacbruno/talkshow.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/rochacbruno/talkshow/context:python)
 
 A Call 4 Papers System - A simple base app as example of Flask Architecture
 
